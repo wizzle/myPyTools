@@ -42,6 +42,11 @@ parser.add_argument('count_passwords', type=int, help='Count of passwords will b
 parser.add_argument('length_one_password', type=int, help='Length of one password.', default=12, nargs='?')
 args = parser.parse_args()
 cp = args.count_passwords
+if cp > 100:
+    cp = 100
 lop = args.length_one_password
 passwords = get_passwords(cp, lop)
-print(passwords)
+counter = 1
+for password in passwords:
+    print('%d:\t%s' % (counter, password))
+    counter += 1
