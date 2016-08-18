@@ -44,7 +44,5 @@ if cp > 100:
     cp = 100
 lop = args.length_one_password
 passwords = get_passwords(cp, lop)
-counter = 1
 for password in passwords:
-    print('%d:\t%s' % (counter, password))
-    counter += 1
+    print('%d:\t%s' % (passwords.index(password)+1, password))
