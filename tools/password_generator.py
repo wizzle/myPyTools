@@ -3,11 +3,17 @@ import argparse
 
 
 def get_char_for_password(what):
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    """
+    To avoid ambiguous symbols alphabet not full.
+    Full version - abcdefghijklmnopqrstuvwxyz
+    :param what:
+    :return: char
+    """
+    alphabet = 'abcdefghjkmnpqrstuvwxyz'
     return {
         '1': random.choice(alphabet),
         '2': random.choice(alphabet.upper()),
-        '3': str(random.randrange(10)),
+        '3': str(random.randrange(1, 9, 1)),
     }.get(what, '0')
 
 
