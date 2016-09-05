@@ -48,8 +48,8 @@ def get_pass(length):
 
 
 parser = argparse.ArgumentParser(description='Password generator.')
-parser.add_argument('passwords_count', type=int, default=10, help='The number of passwords to be generated. Default 10')
-parser.add_argument('password_length', type=int, default=12, help='The length of the password. Default 12')
+parser.add_argument('passwords_count', type=int, default=10, help='The number of passwords to be generated. Default 10', nargs='?')
+parser.add_argument('password_length', type=int, default=12, help='The length of the password. Default 12', nargs='?')
 args = parser.parse_args()
 cp = args.passwords_count
 if cp > 100:
